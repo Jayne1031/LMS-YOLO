@@ -1,0 +1,31 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# African-wildlife dataset by Ultralytics
+# Documentation: https://docs.ultralytics.com/datasets/detect/african-wildlife/
+# Example usage: yolo train data=african-wildlife.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── african-wildlife  ← downloads here (100 MB)
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /home1/zzh/ultralytics-zz/datasets/bdd_100k # dataset root dir
+train: images/train # train images (relative to 'path') 1052 images
+val: images/val # val images (relative to 'path') 225 images
+test: images/val # test images (relative to 'path') 227 images
+
+# Classes
+names:
+  0: person
+  1: rider
+  2: car
+  3: bus
+  4: truck
+  5: bike
+  6: motor
+  7: traffic light
+  8: traffic sign
+  9: train
+
+
+# Download script/URL (optional)
+
