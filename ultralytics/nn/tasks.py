@@ -94,7 +94,7 @@ from ultralytics.utils.torch_utils import (
     scale_img,
     time_sync,
 )
-from ultralytics.nn.modules.BIFPN import BiFPN_Concat2, BiFPN_Concat3
+from ultralytics.nn.modules.CAWF_ import CAWF
 from ultralytics.nn.modules.C2f_UIB import C2f_UIB
 from ultralytics.nn.modules.C3k2_tool import C3k2_UIB,C3k2_LCA3, C3k2_LCA3_2, C3k2_UIB_Replace,C3k2_UIB_Final
 from ultralytics.nn.modules.MCAGate import *
@@ -1146,7 +1146,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             c2 = args[1] if args[3] else args[1] * 4
         elif m in [nn.BatchNorm2d, MCALayer,LCA_layers]:
             args = [ch[f]]
-        elif m in {Concat,BiFPN_Concat2,BiFPN_Concat3}:
+        elif m in {Concat, CAWF}:
             c2 = sum(ch[x] for x in f)
         elif m in {Detect, WorldDetect, Segment, Pose, OBB, ImagePoolingAttn, v10Detect}:
             args.append([ch[x] for x in f])

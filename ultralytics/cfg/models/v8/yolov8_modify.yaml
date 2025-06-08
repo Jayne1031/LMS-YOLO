@@ -36,7 +36,7 @@ head:
   - [-1, 3, C2f_UIB, [256]] # 15 (P3/8-small)
 
   - [-1, 1, Conv, [256, 3, 2]]
-  - [ [ -1,6, 12 ], 1, BiFPN_Concat3, [ 1 ] ] # cat head P4
+  - [ [ -1,6, 12 ], 1, CAWF, [ 1 ] ] # cat head P4
   - [-1, 3, C2f_UIB, [512]] # 18 (P4/16-medium)
 
   - [-1, 1, Conv, [512, 3, 2]]
